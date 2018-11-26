@@ -13,28 +13,26 @@ public class PlayerCast : NetworkBehaviour
 	[SerializeField] GameObject TornadoPref;
     [SerializeField] GameObject ElectricballPref;
     [SerializeField] GameObject PoisonballPref;
+
     [SerializeField] Transform spawnPoint;
 	[SerializeField] Transform dustSpawnPoint;
     //List Of Elems
     /*
-     * 0 - Fire
-     * 1 - Water
+     * 0 - Dark
+     * 1 - Fire
      * 2 - Wind
      * 3 - Storm
-     * 4 - 
-     * 5 - 
-     * 6 - 
-     * 7 - 
-     * 8 - 
-     * 9 - 
-     * 10 - 
-     * 11 - 
+     * 4 - Light
+     * 5 - Water
+     * 6 - Earth
+     * 7 - Grass
      */
-    [SerializeField] const string FireballStr = "0 0 0 "	;
-	[SerializeField] const string DashStr 	= "2 2 "	;
-	[SerializeField] const string TornadoStr 	= "2 3 2 3 ";
-    [SerializeField] const string ElectricballStr = "3 3 3 ";
-    [SerializeField] const string PoisonballStr = "3 3 3 3 ";
+    [SerializeField] const string FireballStr = "1 1 "	;
+	[SerializeField] const string DashStr 	= "2 "	;
+	[SerializeField] const string TornadoStr 	= "2 3 2 ";
+    [SerializeField] const string ElectricballStr = "3 3 ";
+    [SerializeField] const string PoisonballStr = "0 0 1 ";
+
     void Start()
 	{
 		playerControl = gameObject.GetComponent<PlayerController> ();
@@ -71,9 +69,11 @@ public class PlayerCast : NetworkBehaviour
             case ElectricballStr:
                 CmdElectricballCast();
                 break;
+
             case PoisonballStr:
                 CmdPoisonballCast();
                 break;
+
             default:
                 break;
         }
@@ -93,7 +93,7 @@ public class PlayerCast : NetworkBehaviour
     [Command]
     void CmdElectricballCast()
     {
-        GameObject Electricball = Instantiate(ElectricballPref, new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z+1), spawnPoint.transform.rotation, transform);
+        GameObject Electricball = Instantiate(ElectricballPref, spawnPoint.transform.position, spawnPoint.transform.rotation, transform);
         NetworkServer.Spawn(Electricball);
     }
 
@@ -102,7 +102,7 @@ public class PlayerCast : NetworkBehaviour
 	{
 		GameObject DashObj = Instantiate (DashPref, dustSpawnPoint.transform.position, Quaternion.identity);
 		NetworkServer.Spawn (DashObj);
-		playerControl.CmdDash();
+		playerControl.Dash();
 	}
 
 	[Command]

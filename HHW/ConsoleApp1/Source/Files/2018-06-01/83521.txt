@@ -1,6 +1,0 @@
-{
-    "content": "<p>др</p>", 
-    "created": "2018-06-01T14:38:49.282284+00:00", 
-    "force_reparse": "true", 
-    "petition_id": 83521
-}

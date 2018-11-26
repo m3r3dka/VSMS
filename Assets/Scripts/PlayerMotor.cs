@@ -38,19 +38,17 @@ public class PlayerMotor : MonoBehaviour
 
 	public void Rotate(Vector3 rotation)
 	{
-
 		this.rotation = rotation;
 	}
 
 	public void camRotate(Vector3 camRotation)
 	{
-
-        this.camRotation = camRotation;
+		this.camRotation = camRotation;
 	}
 
 	void PerformRotate()
 	{
-        rb.MoveRotation (rb.rotation * Quaternion.Euler (rotation));
+		rb.MoveRotation (rb.rotation * Quaternion.Euler (rotation));
 		if (cam != null)
 			cam.transform.Rotate (-camRotation);
 	}

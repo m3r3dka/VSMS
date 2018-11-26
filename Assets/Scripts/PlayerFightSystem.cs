@@ -13,18 +13,14 @@ public class PlayerFightSystem : MonoBehaviour
 	[SerializeField] Sprite[] Elems;
     //List Of Elems
     /*
-     * 0 - Fire
-     * 1 - Water
+     * 0 - Dark
+     * 1 - Fire
      * 2 - Wind
      * 3 - Storm
-     * 4 - 
-     * 5 - 
-     * 6 - 
-     * 7 - 
-     * 8 - 
-     * 9 - 
-     * 10 - 
-     * 11 - 
+     * 4 - Light
+     * 5 - Water
+     * 6 - Earth
+     * 7 - Grass
      */
 
     [SerializeField] Sprite[] Prints;

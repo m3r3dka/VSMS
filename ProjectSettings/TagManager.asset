@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - FxTemporaire
+  - Floor
+  - Tornado
+  - NoneCollision
   layers:
   - Default
   - TransparentFX

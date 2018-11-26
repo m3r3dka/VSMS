@@ -1,6 +1,0 @@
-{
-    "content": "<p>ПАВ</p>", 
-    "created": "2018-06-01T13:38:47.431796+00:00", 
-    "force_reparse": "true", 
-    "petition_id": 83485
-}

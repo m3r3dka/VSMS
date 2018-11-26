@@ -1,6 +1,0 @@
-{
-    "content": "<p>Эк</p>", 
-    "created": "2018-06-01T01:13:35.856551+00:00", 
-    "force_reparse": "true", 
-    "petition_id": 83165
-}

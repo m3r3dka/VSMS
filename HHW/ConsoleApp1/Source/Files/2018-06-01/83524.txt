@@ -1,6 +1,0 @@
-{
-    "content": "<p>вонь</p>", 
-    "created": "2018-06-01T14:38:51.774718+00:00", 
-    "force_reparse": "true", 
-    "petition_id": 83524
-}

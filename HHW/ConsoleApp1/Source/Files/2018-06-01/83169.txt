@@ -1,6 +1,0 @@
-{
-    "content": "<p>Экол</p>", 
-    "created": "2018-06-01T01:13:44.762867+00:00", 
-    "force_reparse": "true", 
-    "petition_id": 83169
-}

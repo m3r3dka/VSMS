@@ -1,6 +1,0 @@
-{
-    "content": "<p>Дорож</p>", 
-    "created": "2018-06-01T01:11:41.381142+00:00", 
-    "force_reparse": "true", 
-    "petition_id": 83150
-}

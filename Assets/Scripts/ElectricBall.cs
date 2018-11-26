@@ -39,6 +39,7 @@ public class ElectricBall : NetworkBehaviour
         {
             col.GetComponent<PlayerController>().HP -= dmg;
             col.GetComponent<PlayerController>().stuned = true;
+            col.GetComponent<PlayerController>().speed = 0;
             col.GetComponent<PlayerController>().StunTimer = 0;
             col.GetComponent<PlayerController>().StunLength = 5;
         }

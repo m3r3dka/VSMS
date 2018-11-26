@@ -1,6 +1,0 @@
-{
-    "content": "<p>Эко</p>", 
-    "created": "2018-06-01T01:10:16.812735+00:00", 
-    "force_reparse": "true", 
-    "petition_id": 83147
-}

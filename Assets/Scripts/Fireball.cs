@@ -32,14 +32,21 @@ public class Fireball : NetworkBehaviour {
 		}
 	}
 
-	void OnTriggerEnter (Collider col)
-	{
-		if (col.tag == "Player") 
-		{
-			col.GetComponent<PlayerController> ().HP -= dmg;
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.tag == "Player")
+        {
+            col.GetComponent<PlayerController>().HP -= dmg;
+            GameObject Explosion = Instantiate(ExplosionPref, gameObject.transform.position, Quaternion.identity);
+            NetworkServer.Spawn(Explosion);
+            Destroy(gameObject);
         }
-		GameObject Explosion = Instantiate (ExplosionPref, gameObject.transform.position, Quaternion.identity);
-		NetworkServer.Spawn (Explosion);
-		Destroy (gameObject);
-	}
+        else if (col.tag != "NoneCollision")
+        {
+            GameObject Explosion = Instantiate(ExplosionPref, gameObject.transform.position, Quaternion.identity);
+            NetworkServer.Spawn(Explosion);
+            Destroy(gameObject);
+        }
+
+    }
 }

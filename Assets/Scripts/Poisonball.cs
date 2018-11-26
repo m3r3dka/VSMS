@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-[RequireComponent (typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
 
-public class Poisonball : NetworkBehaviour
- {
+public class PoisonBall : NetworkBehaviour
+{
 
     Rigidbody rb;
-    [SerializeField] public GameObject PoisonblastPref;
-    public float speed = 13f;
+    [SerializeField] GameObject ExplosionPref;
+    public float speed = 20f;
     public int dmg = 100;
     [SerializeField] float lifeTime;
     [SerializeField] float Timer;
@@ -22,8 +22,8 @@ public class Poisonball : NetworkBehaviour
 
     void FixedUpdate()
     {
-         Vector3 vector = rb.transform.forward * speed;
-        rb.MovePosition(rb.position + vector*Time.fixedDeltaTime);
+        Vector3 vector = rb.transform.forward * speed;
+        rb.MovePosition(rb.position + vector * Time.fixedDeltaTime);
 
         Timer += Time.deltaTime;
 
@@ -33,15 +33,18 @@ public class Poisonball : NetworkBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnCollisionEnter(Collision col)
     {
-        if (col.tag == "Player")
+        if (col.collider.tag == "Player")
         {
-            col.GetComponent<PlayerController>().HP -= dmg;
+            col.transform.GetComponent<PlayerController>().HP -= dmg;
         }
-        GameObject Explosion = Instantiate(PoisonblastPref, gameObject.transform.position, new Quaternion());
-        Explosion.transform.Rotate(new Vector3(90,0,0));
-        NetworkServer.Spawn(Explosion);
-        Destroy(gameObject);
+        if (col.collider.tag == "Floor")
+        {
+            GameObject Explosion = Instantiate(ExplosionPref, gameObject.transform.position, Quaternion.identity);
+            Explosion.transform.Rotate(90, 0, 0);
+            NetworkServer.Spawn(Explosion);
+            Destroy(gameObject);
+        }
     }
 }

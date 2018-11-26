@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
 [RequireComponent (typeof(Rigidbody))]
 
-public class Tornado : NetworkBehaviour
-{
+public class Tornado : MonoBehaviour {
 	Rigidbody rb;
 	//[SerializeField] Transform Explosion;
 	public float speed = 7f;
-	[SerializeField] float lifeTime;
+    public float strength = 50f;
+    [SerializeField] float lifeTime;
 	[SerializeField] float Timer;
-    public float str = 10f;
+
 	void Start()
 	{
 		rb = gameObject.GetComponent<Rigidbody> ();
@@ -33,21 +32,10 @@ public class Tornado : NetworkBehaviour
 
 	void OnTriggerEnter (Collider col)
 	{
-        
-		rb.MovePosition (rb.position + Vector3.zero * Time.fixedDeltaTime);
         if (col.tag == "Player")
         {
-            print("sas");
-            col.gameObject.GetComponent<Rigidbody>().AddForce(0, str, 0);
+            rb.MovePosition(rb.position + Vector3.zero * Time.fixedDeltaTime);
+            col.GetComponent<Rigidbody>().AddForce(transform.up * strength);
         }
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Player")
-        {
-            print("llllllol");
-            collision.collider.gameObject.GetComponent<Rigidbody>().AddForce(0,str,0);
-        }
-    }
-
+	}
 }
