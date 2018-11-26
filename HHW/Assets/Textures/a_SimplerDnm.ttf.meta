@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 73d534f491dd2284582c732f4eb0e9d3
+timeCreated: 1527103478
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: a_SimplerDnm
+  fontNames:
+  - a_SimplerDnm
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

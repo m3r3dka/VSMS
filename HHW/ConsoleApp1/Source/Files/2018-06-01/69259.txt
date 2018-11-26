@@ -1,0 +1,6 @@
+{
+    "content": "Резюме", 
+    "created": "2018-06-01T14:28:42.878645+00:00", 
+    "force_reparse": "true", 
+    "petition_id": 69259
+}

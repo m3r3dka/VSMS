@@ -1,0 +1,6 @@
+{
+    "content": "ответ на запрос", 
+    "created": "2018-06-01T12:50:16.945262+00:00", 
+    "force_reparse": "true", 
+    "petition_id": 69248
+}

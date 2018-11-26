@@ -1,0 +1,6 @@
+{
+    "content": "<p>тест</p>", 
+    "created": "2018-06-01T12:37:55.223784+00:00", 
+    "force_reparse": "true", 
+    "petition_id": 69237
+}
